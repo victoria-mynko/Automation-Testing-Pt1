@@ -104,19 +104,7 @@ describe('Login:', function () {
     await signInButton.waitForDisplayed({ timeout: 5000 });
     await signInButton.click();
 
-    await browser.waitUntil(
-      async function () {
-        const url = await browser.getUrl();
-        return url === 'http://46.101.234.121/doctors';
-      },
-      { timeout: 5000 },
-    );
-
-    const url = await browser.getUrl();
-    expect(url).to.be.eql('http://46.101.234.121/doctors');
-    
-    await browser.reloadSession();
-
+    await browser.pause();
   });
 });
 
@@ -125,7 +113,7 @@ describe('Login:', function () {
 
 describe('Login with invalid email:', function () {
 
-  xit('should not allow login with invalid email', async function() {
+  it('should not allow login with invalid email', async function() {
     
     await browser.setWindowSize(1440, 960);
     await browser.url('/sign-in');
@@ -158,7 +146,7 @@ describe('Login with invalid email:', function () {
     const url = await browser.getUrl();
     expect(url).not.to.be.equal('http://46.101.234.121/doctors');
     
-    await browser.reloadSession();
+    await browser.pause();
 
   });
 });
@@ -284,9 +272,9 @@ describe('Change spec and clinic for doctor:', function () {
 
 //Тест на добавление новой клиники
 
-describe('Change spec and clinic for doctor:', function () {
+describe('Add new clinic:', function () {
 
-  it('should be able to change specialty and clinic for doctor', async function() {
+  xit('should be able to add a new clinic ', async function() {
     
     await browser.setWindowSize(1440, 960);
     await browser.url('/sign-in');
