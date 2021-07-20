@@ -17,7 +17,7 @@ describe('Add new clinic:', function () {
     await browser.pause(5000);
     });
 
-    xit('should be able to add a new clinic ', async function () {
+    it('should be able to add a new clinic ', async function () {
       await app.authPage.login({
         email: `john_admin1@admin.com`,
         password: 'Pa55word',
@@ -36,7 +36,7 @@ describe('Add new clinic:', function () {
       await browser.pause(1000);
 
       await app.addClinic.add({
-        name: `New Clinic BSA`,
+        name: `New Clinic BSA${rundomNumber()}`,
         address: '800 Cherokee Ave SE',
         status: 'state',
         city: 'Atlanta, GA'
