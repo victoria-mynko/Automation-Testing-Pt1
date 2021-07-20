@@ -17,7 +17,7 @@ describe('Change spec and clinic for doctor:', function () {
     await browser.pause(5000);
     });
 
-    it('should be able to change specialty and clinic for doctor', async function() {
+    xit('should be able to change specialty and clinic for doctor', async function() {
       
       await app.authPage.login({
         email: `dr.house@gmail.com`,
